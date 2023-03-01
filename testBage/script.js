@@ -46,8 +46,10 @@ function getAns(first, operate, second) {
 }
 for (let i = 0; i < numOpe.length; i++) {
 	numOpe[i].addEventListener('click', function() {
-		if (numOpe[i].value === '=' && nextNum === 0) screen.innerHTML = num[nextNum];
-		else if (numOpe[i].value === '=') {
+		if (numOpe[i].value === '=' && nextNum === 0) {
+			if (num[nextNum].length === 0) screen.innerHTML = '0';
+			else screen.innerHTML = num[nextNum];
+		} else if (numOpe[i].value === '=') {
 			num[0] = getAns(num[0], preOperation, num[1]);
 			num[1] = '';
 			nextNum = 1;
