@@ -27,8 +27,12 @@ deleteOver.addEventListener('click', function() {
 
 for (let i = 0; i < numBut.length; i++) {
 	numBut[i].addEventListener('click', function() {
-		num[nextNum] += numBut[i].value;
-		screen.innerHTML = num[nextNum];
+		if (numBut[i].value === '0' && num[nextNum].length === 0) {
+			screen.innerHTML = '0';
+		} else {
+			num[nextNum] += numBut[i].value;
+			screen.innerHTML = num[nextNum];
+		}
 	});
 }
 
