@@ -56,7 +56,7 @@ for (let i = 0; i < numOpe.length; i++) {
 		} else if (numOpe[i].value === '=') {
 			num[0] = getAns(num[0], preOperation, num[1]);
 			num[1] = '';
-			nextNum = 1;
+			nextNum = 0;
 			screen.innerHTML = num[0];
 		} else if (nextNum === 0) {
 			preOperation = numOpe[i].value;
